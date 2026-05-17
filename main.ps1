@@ -1,32 +1,33 @@
-# ================================
+# ==========================================
 # NX-PAKS
-# Main Menu
-# ================================
+# Nintendo Switch SD Manager
+# ==========================================
 
-# -------- CONFIG --------
+# ---------- TERMINAL FIX ----------
+
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
+chcp 65001 > $null
 
 $Host.UI.RawUI.WindowTitle = "NX-PAKS"
 
-# -------- FUNCTIONS --------
+# ---------- FUNCTIONS ----------
 
-function Show-Logo {
+function Show-Header {
 
     Clear-Host
 
-    Write-Host ""
-    Write-Host "███╗   ██╗██╗  ██╗      ██████╗  █████╗ ██╗  ██╗" -ForegroundColor Green
-    Write-Host "████╗  ██║╚██╗██╔╝      ██╔══██╗██╔══██╗██║ ██╔╝" -ForegroundColor Green
-    Write-Host "██╔██╗ ██║ ╚███╔╝ ████╗ ██████╔╝███████║█████╔╝ " -ForegroundColor Green
-    Write-Host "██║╚██╗██║ ██╔██╗ ╚═══╝ ██╔═══╝ ██╔══██║██╔═██╗ " -ForegroundColor Green
-    Write-Host "██║ ╚████║██╔╝ ██╗      ██║     ██║  ██║██║  ██╗" -ForegroundColor Green
-    Write-Host "╚═╝  ╚═══╝╚═╝  ╚═╝      ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝" -ForegroundColor Green
+    Write-Host "========================================" -ForegroundColor DarkGray
+    Write-Host "                NX-PAKS                " -ForegroundColor Green
+    Write-Host "========================================" -ForegroundColor DarkGray
 
     Write-Host ""
-    Write-Host " Nintendo Switch SD Manager" -ForegroundColor DarkGray
+    Write-Host " Nintendo Switch SD Manager" -ForegroundColor Gray
     Write-Host ""
 }
 
 function Pause-App {
+
     Write-Host ""
     Read-Host "Pressione ENTER para continuar"
 }
@@ -35,22 +36,22 @@ function Show-MainMenu {
 
     do {
 
-        Show-Logo
+        Show-Header
 
-        Write-Host "╔════════════════════════════════════╗" -ForegroundColor DarkGray
-        Write-Host "║            MENU PRINCIPAL         ║" -ForegroundColor DarkGray
-        Write-Host "╠════════════════════════════════════╣" -ForegroundColor DarkGray
+        Write-Host "+--------------------------------------+" -ForegroundColor DarkGray
+        Write-Host "|           MENU PRINCIPAL             |" -ForegroundColor DarkGray
+        Write-Host "+--------------------------------------+" -ForegroundColor DarkGray
 
-        Write-Host "║ [1] Instalar Pack do Zero         ║" -ForegroundColor Cyan
-        Write-Host "║ [2] Atualizar/Reinstalar Pack     ║" -ForegroundColor Yellow
-        Write-Host "║ [3] Ferramentas                   ║" -ForegroundColor Magenta
-        Write-Host "║ [4] Download Firmware             ║" -ForegroundColor Blue
-        Write-Host "║ [5] Backup                        ║" -ForegroundColor Green
-        Write-Host "║ [6] Configurações                 ║" -ForegroundColor Gray
+        Write-Host "| [1] Instalar Pack do Zero            |" -ForegroundColor Cyan
+        Write-Host "| [2] Atualizar/Reinstalar Pack        |" -ForegroundColor Yellow
+        Write-Host "| [3] Ferramentas                      |" -ForegroundColor Magenta
+        Write-Host "| [4] Download Firmware                |" -ForegroundColor Blue
+        Write-Host "| [5] Backup                           |" -ForegroundColor Green
+        Write-Host "| [6] Configuracoes                    |" -ForegroundColor Gray
 
-        Write-Host "╠════════════════════════════════════╣" -ForegroundColor DarkGray
-        Write-Host "║ [0] Sair                          ║" -ForegroundColor Red
-        Write-Host "╚════════════════════════════════════╝" -ForegroundColor DarkGray
+        Write-Host "+--------------------------------------+" -ForegroundColor DarkGray
+        Write-Host "| [0] Sair                             |" -ForegroundColor Red
+        Write-Host "+--------------------------------------+" -ForegroundColor DarkGray
 
         Write-Host ""
 
@@ -61,16 +62,17 @@ function Show-MainMenu {
             "1" {
 
                 Clear-Host
-                Write-Host ""
-                Write-Host "[ INSTALAR PACK DO ZERO ]" -ForegroundColor Cyan
-                Write-Host ""
 
-                # TODO:
-                # Detectar SD
-                # Formatar FAT32 64K
-                # Download Pack
-                # Extrair arquivos
-                # Gerar instruções emuMMC
+                Write-Host "========================================" -ForegroundColor Cyan
+                Write-Host "       INSTALAR PACK DO ZERO            " -ForegroundColor Cyan
+                Write-Host "========================================" -ForegroundColor Cyan
+
+                Write-Host ""
+                Write-Host "[TODO] Detectar SD"
+                Write-Host "[TODO] Formatar FAT32 64K"
+                Write-Host "[TODO] Download do pack"
+                Write-Host "[TODO] Extrair arquivos"
+                Write-Host "[TODO] Gerar instrucoes emuMMC"
 
                 Pause-App
             }
@@ -78,16 +80,17 @@ function Show-MainMenu {
             "2" {
 
                 Clear-Host
-                Write-Host ""
-                Write-Host "[ ATUALIZAR / REINSTALAR PACK ]" -ForegroundColor Yellow
-                Write-Host ""
 
-                # TODO:
-                # Detectar pack atual
-                # Backup parcial
-                # Preservar Nintendo/emuMMC
-                # Limpeza
-                # Reinstalação
+                Write-Host "========================================" -ForegroundColor Yellow
+                Write-Host "     ATUALIZAR / REINSTALAR PACK        " -ForegroundColor Yellow
+                Write-Host "========================================" -ForegroundColor Yellow
+
+                Write-Host ""
+                Write-Host "[TODO] Detectar pack instalado"
+                Write-Host "[TODO] Backup parcial"
+                Write-Host "[TODO] Preservar Nintendo/emuMMC"
+                Write-Host "[TODO] Limpeza segura"
+                Write-Host "[TODO] Reinstalar pack"
 
                 Pause-App
             }
@@ -95,15 +98,15 @@ function Show-MainMenu {
             "3" {
 
                 Clear-Host
-                Write-Host ""
-                Write-Host "[ FERRAMENTAS ]" -ForegroundColor Magenta
-                Write-Host ""
 
-                # TODO:
-                # Integridade SD
-                # Backup
-                # IMG SD
-                # Verificações
+                Write-Host "========================================" -ForegroundColor Magenta
+                Write-Host "              FERRAMENTAS               " -ForegroundColor Magenta
+                Write-Host "========================================" -ForegroundColor Magenta
+
+                Write-Host ""
+                Write-Host "[TODO] Verificar integridade SD"
+                Write-Host "[TODO] Criar IMG do SD"
+                Write-Host "[TODO] Ferramentas auxiliares"
 
                 Pause-App
             }
@@ -111,13 +114,14 @@ function Show-MainMenu {
             "4" {
 
                 Clear-Host
-                Write-Host ""
-                Write-Host "[ DOWNLOAD FIRMWARE ]" -ForegroundColor Blue
-                Write-Host ""
 
-                # TODO:
-                # Download firmware
-                # Extrair em /firmware
+                Write-Host "========================================" -ForegroundColor Blue
+                Write-Host "          DOWNLOAD FIRMWARE             " -ForegroundColor Blue
+                Write-Host "========================================" -ForegroundColor Blue
+
+                Write-Host ""
+                Write-Host "[TODO] Download firmware"
+                Write-Host "[TODO] Extrair em /firmware"
 
                 Pause-App
             }
@@ -125,14 +129,15 @@ function Show-MainMenu {
             "5" {
 
                 Clear-Host
-                Write-Host ""
-                Write-Host "[ BACKUP ]" -ForegroundColor Green
-                Write-Host ""
 
-                # TODO:
-                # Backup ZIP
-                # Backup completo
-                # IMG SD
+                Write-Host "========================================" -ForegroundColor Green
+                Write-Host "                 BACKUP                 " -ForegroundColor Green
+                Write-Host "========================================" -ForegroundColor Green
+
+                Write-Host ""
+                Write-Host "[TODO] Backup ZIP"
+                Write-Host "[TODO] Backup completo SD"
+                Write-Host "[TODO] IMG do SD"
 
                 Pause-App
             }
@@ -140,15 +145,15 @@ function Show-MainMenu {
             "6" {
 
                 Clear-Host
-                Write-Host ""
-                Write-Host "[ CONFIGURAÇÕES ]" -ForegroundColor Gray
-                Write-Host ""
 
-                # TODO:
-                # Paths
-                # Temp
-                # Logs
-                # Idioma
+                Write-Host "========================================" -ForegroundColor Gray
+                Write-Host "             CONFIGURACOES              " -ForegroundColor Gray
+                Write-Host "========================================" -ForegroundColor Gray
+
+                Write-Host ""
+                Write-Host "[TODO] Diretorios"
+                Write-Host "[TODO] Logs"
+                Write-Host "[TODO] Idioma"
 
                 Pause-App
             }
@@ -163,7 +168,7 @@ function Show-MainMenu {
             default {
 
                 Write-Host ""
-                Write-Host "Opção inválida!" -ForegroundColor Red
+                Write-Host "Opcao invalida!" -ForegroundColor Red
                 Start-Sleep 1
             }
         }
@@ -171,6 +176,6 @@ function Show-MainMenu {
     } while ($option -ne "0")
 }
 
-# -------- START --------
+# ---------- START ----------
 
 Show-MainMenu
